@@ -1,0 +1,45 @@
+### Index
+GET {{baseUri}}/products HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Store
+POST {{baseUri}}/products HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "name": "Produto Teste",
+    "description": "Produto criado via API/REST",
+    "price": 99.90,
+    "stock": 10,
+    "position": 0,
+    "enabled": true
+}
+
+### Show
+# 1 é o id do produto neste exemplo.
+GET {{baseUri}}/products/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Update
+# 1 é o id do produto neste exemplo.
+PUT {{baseUri}}/products/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "name": "Produto ATUALIZADO via API/REST",
+    "description": "Descrição atualizada",
+    "price": 149.90,
+    "stock": 5,
+    "position": 0,
+    "enabled": true
+}
+
+### Delete
+# Use o id do produto criado no Store (não use 1, que já existe).
+DELETE {{baseUri}}/products/11 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}

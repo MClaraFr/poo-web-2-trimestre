@@ -1,0 +1,34 @@
+### Index
+GET {{baseUri}}/categories HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Store
+POST {{baseUri}}/categories HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+{
+    "name": "Eletronicos",
+    "description": "Categoria criada via API/REST"
+}
+
+### Show
+GET {{baseUri}}/categories/18 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Update
+PUT {{baseUri}}/categories/18 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "description": "Categoria ATUALIZADA via API/REST"
+}
+
+### Delete
+DELETE {{baseUri}}/categories/18 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}

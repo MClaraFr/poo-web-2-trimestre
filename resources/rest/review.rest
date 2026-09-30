@@ -1,0 +1,45 @@
+### Index
+GET {{baseUri}}/reviews HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Store
+POST {{baseUri}}/reviews HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "product_id": 1,
+    "customer_id": 1,
+    "rating": 5,
+    "comment": "Excelente produto, recomendo!"
+}
+
+### Show
+# 11 é o id da review neste exemplo.
+# Utilize um id existente em sua base de dados.
+GET {{baseUri}}/reviews/11 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Update
+# 11 é o id da review neste exemplo.
+# Utilize um id existente em sua base de dados.
+PUT {{baseUri}}/reviews/11 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "product_id": 1,
+    "customer_id": 1,
+    "rating": 4,
+    "comment": "Review ATUALIZADA via API/REST"
+}
+
+### Delete
+# 11 é o id da review neste exemplo.
+# Utilize um id existente em sua base de dados.
+# Após a execução deste processo, o mesmo id não funcionará
+DELETE {{baseUri}}/reviews/11 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}

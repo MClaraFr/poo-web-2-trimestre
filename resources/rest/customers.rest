@@ -1,0 +1,43 @@
+### Index
+GET {{baseUri}}/customers HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Store
+POST {{baseUri}}/customers HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "name": "Cliente Teste",
+    "email": "cliente.teste@example.com",
+    "phone": "44999998888",
+    "birth_date": "1995-05-20"
+}
+
+### Show
+# 1 é o id do cliente neste exemplo.
+# Utilize um id existente em sua base de dados.
+GET {{baseUri}}/customers/2 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Update
+# 1 é o id do cliente neste exemplo.
+# Utilize um id existente em sua base de dados.
+PUT {{baseUri}}/customers/2 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "name": "Cliente ATUALIZADO via API/REST",
+    "email": "cliente.atualizado@example.com",
+    "phone": "44988887777",
+    "birth_date": "1990-01-01"
+}
+
+### Delete
+# Use o id do cliente criado no Store (não use 1, que já existe).
+DELETE {{baseUri}}/customers/2 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
