@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UploadController;
 
 Route::post('auth/login', [AuthController::class, 'login']);
 
@@ -20,4 +21,5 @@ Route::group([
     Route::apiResource('reviews', ReviewController::class);
     Route::apiResource('orders', OrderController::class);
     Route::apiResource('products', ProductController::class);
+    Route::post('/upload', [UploadController::class, 'upload']);
 });
